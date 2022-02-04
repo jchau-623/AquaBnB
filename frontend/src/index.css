@@ -1,0 +1,13 @@
+/* TODO Add site wide styles */
+* {
+    box-sizing: border-box;
+    font-family: "Roboto";
+    margin: 0;
+  }
+
+  #root {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 180px;
+    background-color: #e5e7e6;
+  }
