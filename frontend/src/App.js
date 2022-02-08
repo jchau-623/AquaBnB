@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-// import SpotCard from "./components/SpotsCard";
+import SpotCard from "./components/SpotsCard";
 import Footer from "./components/Footer";
-// import Spots from "./components/Pages/Spots";
-// import SingleSpot from "./components/Pages/SingleSpot";
+import Spots from "./components/Pages/Spots";
+import SingleSpot from "./components/Pages/SingleSpot";
 import Landing from "./components/Pages/Landing";
-// import Account from "./components/Account";
-// import SpotsByType from "./components/Pages/SpotsByType";
+import Account from "./components/Account";
+import SpotsByType from "./components/Pages/SpotsByType";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,21 +26,20 @@ function App() {
           <Route exact path="/">
             <Landing />
           </Route>
-          {/* <Route path="/categories/:type">
-            <SpotsByType />
-          </Route> */}
-          {/* <Route path="/places/:id">
-            <SingleSpot />
-          </Route> */}
-          {/* <Route path="/places">
-            <Spots isLoaded={isLoaded} />
-          </Route> */}
-          {/* <Route path="/users/:id">
+          <Route path="/users/:id">
             <Account isLoaded={isLoaded} />
-          </Route> */}
+          </Route>
+          <Route path="/places/:id">
+            <SingleSpot />
+          </Route>
+          <Route path="/places">
+            <Spots isLoaded={isLoaded} />
+          </Route>
+          <Route path="/categories/:type">
+            <SpotsByType />
+          </Route>
         </Switch>
       )}
-
       <Footer />
     </>
   );

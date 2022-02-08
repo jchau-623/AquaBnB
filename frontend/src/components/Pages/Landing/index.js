@@ -6,23 +6,24 @@ const Landing = (props) => {
   const places = [
     {
       name: "Atlantis",
-      id: "blah",
-      distance: "blah",
-      type: "blah",
+      id: "Atlantis",
+      type: "Atlantis",
     },
     {
       name: "Pavlopetri",
-      id: "blah",
-      distance: "blah",
-      type: "blah",
+      id: "Pavlopetri",
+      type: "Pavlopetri",
     },
     {
       name: "Heracleion",
-      id: "blah",
-      distance: "blah",
-      type: "blah",
+      id: "Heracleion",
+      type: "Heracleion",
     },
-    { name: "Baiae", id: "blah", distance: "blah", type: "blah" },
+    {
+      name: "Baiae",
+      id: "Baiae",
+      type: "Baiae"
+    },
   ];
   return (
     <div>

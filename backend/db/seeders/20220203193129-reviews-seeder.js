@@ -17,7 +17,7 @@ module.exports = {
         {
           spotId: 1,
           userId: 1,
-          rating: 4,
+          rating: 5,
           description:
             "The views were pretty awesome. I love fish.",
           createdAt: new Date(),
@@ -26,7 +26,7 @@ module.exports = {
         {
           spotId: 3,
           userId: 1,
-          rating: 1,
+          rating: 5,
           description:
             "I was almost eating by a shark but I don't care because I had so much fun!",
           createdAt: new Date(),
@@ -35,7 +35,7 @@ module.exports = {
         {
           spotId: 4,
           userId: 1,
-          rating: 3,
+          rating: 5,
           description:
             "I love to pretend I am a fish therefore this was perfect for me!",
           createdAt: new Date(),

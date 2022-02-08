@@ -6,9 +6,9 @@ const MainImage = (props) => {
     <div className="main-image-container">
       <div className="main-image">
         <div className="image-text">
-          Need Help? Click me!
+          Not sure where to go? Perfect.
           <Link className="image-button" to="/places">
-            blah
+            Dive in!
           </Link>
         </div>
       </div>

@@ -32,13 +32,13 @@ function Navigation({ isLoaded }) {
         <div className="logo-third">
           <div className="logo-container">
             <NavLink exact to="/" className="logo">
-              <Logo />
+              Home
             </NavLink>
           </div>
         </div>
         <div className="middle-third">
           <div className="main-links">
-            <NavLink to="/places">Places to stay</NavLink>
+            {/* <NavLink to="/places">Places to stay</NavLink> */}
             {/* {sessionUser && (
             <NavLink to={`/users/${sessionUser?.id}`}>Become a Host</NavLink>
           )} */}
