@@ -3,7 +3,7 @@
 ## An AirBnB clone centered on living underwater!
 ### React, Redux, Express, Sequelize, Node.js, and PostgreSQL were all used in the creation of this application.
 
-* [Database Schema]
+* [Database Schema](https://github.com/jchau-623/AquaBnB/wiki/Users)
 * [Frontend Routes]
 * [API Routes]
 
