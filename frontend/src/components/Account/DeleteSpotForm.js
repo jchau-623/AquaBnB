@@ -16,7 +16,7 @@ const DeleteSpotForm = ({ setShowModal, spotId }) => {
     <div className="host-activate-container">
       <div className="host-activate">
         <div>
-          Confirm delete
+          Are you sure?
         </div>
         <button id="delete-spot" onClick={deleteSpot}>
           Delete

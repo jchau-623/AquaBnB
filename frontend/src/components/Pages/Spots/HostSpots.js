@@ -5,6 +5,8 @@ import { Modal } from "../../../context/Modal";
 import EditSpotForm from "../../Account/EditSpotForm";
 import DeleteSpotForm from "../../Account/DeleteSpotForm";
 import SpotCard from "../../SpotsCard";
+import "./HostSpots.css"
+
 const HostSpots = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -30,7 +32,7 @@ const HostSpots = () => {
             <SpotCard spot={spot} />
             <div className="action-btns">
               <button
-                className="edit btn"
+                className="edit-btn"
                 dataid={spot.id}
                 onClick={() => {
                   dispatch(spotActions.getOneSpot(spot.id));
@@ -50,7 +52,7 @@ const HostSpots = () => {
                 </Modal>
               )}
               <button
-                className="delete btn"
+                className="delete-btn"
                 dataid={spot.id}
                 onClick={() => {
                   dispatch(spotActions.getOneSpot(spot.id));

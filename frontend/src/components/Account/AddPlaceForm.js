@@ -166,7 +166,7 @@ const AddPlaceForm = ({ setShowModal }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Address"
+            placeholder="Heading"
             // required
           />
 

@@ -56,15 +56,15 @@ const ProfileButton = ({ user }) => {
           </div>
         )}
       </div>
-    );
+    )
   } else {
     sessionLinks = (
       <div className="nav-btn">
         <LoginModal />
         <SignupModal />
       </div>
-    );
+    )
   }
-  return sessionLinks;
-};
-export default ProfileButton;
+  return sessionLinks
+}
+export default ProfileButton

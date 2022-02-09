@@ -14,13 +14,13 @@ function Navigation({ isLoaded }) {
   // const dropdownRef = useRef(null);
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
+    sessionLinks = <ProfileButton user={sessionUser} />
     // <UserDropdown setShowDrop={setShowDrop} showDrop={showDrop} />
   } else {
     sessionLinks = (
       <>
         {/* <LoginFormModal /> */}
-        <ProfileButton user={sessionUser} />;
+        <ProfileButton user={sessionUser} />
         {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );

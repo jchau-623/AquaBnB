@@ -11,6 +11,8 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
   }
 
   .host-activate > button {
@@ -20,7 +22,12 @@
     border-radius: 10px;
     font-size: 16px;
     color: white;
-    background-color: #453f78;
+    background-color: teal;
+  }
+
+  .host-activate > button:hover {
+    background-color: #3d386b;
+    cursor:pointer;
   }
 
   .components-container {
@@ -39,7 +46,7 @@
     width: 200px;
     border: none;
     border-radius: 8px;
-    background-color: #453f78;
+    background-color: teal;
     color: white;
     padding: 4px 12px;
   }
@@ -47,6 +54,7 @@
   .become-host-modal-show:hover,
   .add-spot-show-modal:hover {
     background-color: #3d386b;
+    cursor: pointer;
   }
   .host-spots-container {
     margin-left: -15%;
