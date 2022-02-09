@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       hasHeat: DataTypes.BOOLEAN,
       price: DataTypes.INTEGER,
       postedAt: DataTypes.DATE,
-      coordinates: DataTypes.STRING,
+      // coordinates: DataTypes.STRING,
       hostId: DataTypes.INTEGER,
     },
     {}

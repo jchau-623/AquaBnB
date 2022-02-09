@@ -26,7 +26,7 @@ const EditSpotForm = ({ setShowModal }) => {
   const [hasHeat, setHeat] = useState(currSpot?.hasHeat);
   const [price, setPrice] = useState(currSpot?.price);
   const [image, setImage] = useState(currSpot?.name);
-  const [coordinates, setCoordinates] = useState(currSpot?.coordinates);
+  // const [coordinates, setCoordinates] = useState(currSpot?.coordinates);
   const reset = () => {
     setName(currSpot?.name);
     setType(currSpot?.type);
@@ -41,7 +41,7 @@ const EditSpotForm = ({ setShowModal }) => {
     setAC(currSpot?.hasAC);
     setHeat(currSpot?.hasHeat);
     setPrice(currSpot?.price);
-    setCoordinates(currSpot?.coordinates);
+    // setCoordinates(currSpot?.coordinates);
     setImage(currSpot?.image);
   };
   const onSubmit = (e) => {
@@ -62,7 +62,7 @@ const EditSpotForm = ({ setShowModal }) => {
         hasAC,
         hasHeat,
         price: parseInt(price, 10),
-        coordinates,
+        // coordinates,
         hostId: sessionUser.id,
       },
     };
@@ -135,7 +135,7 @@ const EditSpotForm = ({ setShowModal }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title of Property"
+            placeholder="Address"
             // required
           />
 
@@ -214,7 +214,7 @@ const EditSpotForm = ({ setShowModal }) => {
             >
               Air Conditioning
             </div>
-            <div
+            {/* <div
               className={`amenity ${hasHeat ? "selected" : ""}`}
               onClick={(e) => {
                 selectToggle(e);
@@ -222,11 +222,11 @@ const EditSpotForm = ({ setShowModal }) => {
               }}
             >
               Heat
-            </div>
+            </div> */}
           </div>
-          <div className="clear-selections" onClick={resetSelections}>
+          {/* <div className="clear-selections" onClick={resetSelections}>
             Clear All
-          </div>
+          </div> */}
         </div>
         <button>Submit</button>
       </form>

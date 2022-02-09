@@ -13,7 +13,7 @@ const BecomeHostForm = (props) => {
   return (
     <div className="host-activate-container">
       <div className="host-activate">
-        <div>Register a host</div>
+        <div>Click below to confirm</div>
         <button onClick={updateUser}>Become a Host</button>
       </div>
     </div>

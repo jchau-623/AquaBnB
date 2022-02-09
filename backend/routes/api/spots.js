@@ -66,7 +66,7 @@ router.post(
       hasHeat,
       price,
       postedAt,
-      coordinates,
+      // coordinates,
       hostId,
     } = req.body;
     // const { spot } = req.body;
@@ -85,7 +85,7 @@ router.post(
       hasHeat,
       price,
       postedAt,
-      coordinates,
+      // coordinates,
       hostId,
     };
     const createdSpot = await Spot.create(newSpot);
@@ -122,7 +122,7 @@ router.put(
       hasHeat,
       price,
       postedAt,
-      coordinates,
+      // coordinates,
       hostId,
     } = req.body;
     // const { spot } = req.body;
@@ -141,7 +141,7 @@ router.put(
       hasHeat,
       price,
       postedAt,
-      coordinates,
+      // coordinates,
       hostId,
     };
     // TODO: Update Spot

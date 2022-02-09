@@ -69,10 +69,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      coordinates: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
+      // coordinates: {
+      //   allowNull: false,
+      //   type: Sequelize.STRING,
+      // },
       hostId: {
         allowNull: false,
         type: Sequelize.INTEGER,

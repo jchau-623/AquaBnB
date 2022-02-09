@@ -6,7 +6,7 @@ const Heading = ({ spot }) => {
       <h1 className="title">{spot?.title}</h1>
       <div>
         <span className="rating">{spot?.Reviews?.rating}</span>
-        <span className="coordinates">{spot?.coordinates}</span>
+        {/* <span className="coordinates">{spot?.coordinates}</span> */}
       </div>
     </div>
   );

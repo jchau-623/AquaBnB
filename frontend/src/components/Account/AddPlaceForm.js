@@ -21,7 +21,7 @@ const AddPlaceForm = ({ setShowModal }) => {
   const [hasHeat, setHeat] = useState(false);
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
-  const [coordinates, setCoordinates] = useState("");
+  // const [coordinates, setCoordinates] = useState("");
   const [disabled, setDisabled] = useState(false);
   useEffect(() => {
     const errs = [];
@@ -73,7 +73,7 @@ const AddPlaceForm = ({ setShowModal }) => {
         hasHeat,
         price: parseInt(price, 10),
         postedAt: new Date(),
-        coordinates,
+        // coordinates,
         hostId: sessionUser.id,
       },
       image,
@@ -107,7 +107,7 @@ const AddPlaceForm = ({ setShowModal }) => {
     setDescription("");
     setPrice("");
     setImage(null);
-    setCoordinates("");
+    // setCoordinates("");
     resetSelections();
   };
   const resetSelections = () => {
@@ -166,7 +166,7 @@ const AddPlaceForm = ({ setShowModal }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title of property"
+            placeholder="Address"
             // required
           />
 
@@ -250,7 +250,7 @@ const AddPlaceForm = ({ setShowModal }) => {
             >
               Air Conditioning
             </div>
-            <div
+            {/* <div
               className="amenity"
               onClick={(e) => {
                 selectToggle(e);
@@ -258,24 +258,12 @@ const AddPlaceForm = ({ setShowModal }) => {
               }}
             >
               Heat
-            </div>
+            </div> */}
           </div>
-          <div className="clear-selections" onClick={resetSelections}>
+          {/* <div className="clear-selections" onClick={resetSelections}>
             Clear All Selections
-          </div>
+          </div> */}
         </div>
-        {/* <div className="select-image-container">
-          <label htmlFor="image">
-            Add an Image
-            <input
-              className="select-image"
-              id="image"
-              type="file"
-              name="image"
-              onChange={updateFile}
-            ></input>
-          </label>
-        </div> */}
         <button disabled={disabled}>Host this Place</button>
       </form>
     </div>
