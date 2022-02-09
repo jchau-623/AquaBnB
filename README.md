@@ -5,6 +5,7 @@
 
 * [Database Schema](https://github.com/jchau-623/AquaBnB/wiki/Users)
 * [Frontend Routes](https://github.com/jchau-623/AquaBnB/wiki/Frontend-Routes)
+* [Feature List](https://github.com/jchau-623/AquaBnB/wiki/MVP)
 
 [Live Link](https://oct-aquabnb.herokuapp.com/)
 
