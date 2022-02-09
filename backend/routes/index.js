@@ -6,13 +6,6 @@ router.use("/api", apiRouter);
 /*--------------------------------------------------------------------*/
 // SERVING FRONTEND (XSRF-TOKEN)
 // STATIC ROUTES
-
-router.get("/hello/world", function (req, res) {
-    res.cookie("XSRF-TOKEN", req.csrfToken());
-    res.send("Hello World!");
-  });
-
-
 if (process.env.NODE_ENV === "production") {
   const path = require("path");
 

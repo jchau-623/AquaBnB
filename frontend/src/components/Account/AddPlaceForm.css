@@ -1,0 +1,49 @@
+.add-place-modal {
+    width: 750px;
+    z-index: 900;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .amenities-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .amenity,
+.clear-selections {
+  width: 120px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid blue;
+}
+
+.amenity {
+    border: 1px solid blue;
+  }
+
+.amenity:hover {
+    background-color: lightblue;
+  }
+.amenities {
+    display: flex;
+    width: 650px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .clear-selections:hover {
+    background-color: lightblue;
+  }

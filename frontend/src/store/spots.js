@@ -63,24 +63,6 @@ const formDataBuilder = (spot) => {
   return formData;
 };
 export const addNewSpot = (newSpot) => async (dispatch) => {
-  // const {
-  //   type,
-  //   name,
-  //   title,
-  //   pets,
-  //   totalOccupancy,
-  //   totalBedrooms,
-  //   totalBathrooms,
-  //   description,
-  //   hasWifi,
-  //   hasTV,
-  //   hasAC,
-  //   hasHeat,
-  //   price,
-  //   postedAt,
-  //   coordinates,
-  //   hostId,
-  // } = newSpot.spot;
   const formData = formDataBuilder(newSpot);
   const res = await csrfFetch(`/api/spots`, {
     method: "POST",
@@ -155,10 +137,6 @@ const spotsReducer = (state = initialState, action) => {
       ];
       return newState;
     }
-    // case DELETE_SPOT: {
-    //   const newState = { ...state };
-    //   newState.entries =
-    // }
     default:
       return state;
   }

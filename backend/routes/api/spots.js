@@ -3,7 +3,7 @@ const router = express.Router();
 const asyncHandler = require("express-async-handler");
 const { check } = require("express-validator");
 const { handleValidationErrors } = require("../../utils/validation");
-// const { singlePublicFileUpload, singleMulterUpload } = require("../../awsS3");
+const { singlePublicFileUpload, singleMulterUpload } = require("../../awsS3");
 const { Spot, Image, Review, Reservation, User } = require("../../db/models");
 const { Op } = require("sequelize");
 /*--------------------------------------------------------------------*/
@@ -49,7 +49,7 @@ router.get(
 router.post(
   "/",
   // spotValidator,
-  // singleMulterUpload("image"),
+  singleMulterUpload("image"),
   asyncHandler(async (req, res) => {
     const {
       type,

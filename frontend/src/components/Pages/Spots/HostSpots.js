@@ -21,7 +21,6 @@ const HostSpots = () => {
     };
     checkIfHost();
 
-    // dispatch(spotActions.getAllSpots());
   }, [dispatch, sessionUser]);
   return (
     <div className="host-spots-container">

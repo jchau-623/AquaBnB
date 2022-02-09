@@ -42,11 +42,11 @@ const ProfileButton = ({ user }) => {
         </div>
         {showMenu && (
           <div className="drop-menu">
-            <div className="account-link">
+            {/* <div className="account-link">
               <Link to={`/users/${user.id}`}>
-                {user.isHost ? "View your spots" : "Become a host"}
+                {user.isHost ? "View your spots" : "Become a Host"}
               </Link>
-            </div>
+            </div> */}
             <div className="account-link">
               <Link to={`/users/${user.id}`}>Account</Link>
             </div>

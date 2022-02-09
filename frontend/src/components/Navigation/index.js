@@ -39,9 +39,9 @@ function Navigation({ isLoaded }) {
         <div className="middle-third">
           <div className="main-links">
             {/* <NavLink to="/places">Places to stay</NavLink> */}
-            {/* {sessionUser && (
+            {sessionUser && (
             <NavLink to={`/users/${sessionUser?.id}`}>Become a Host</NavLink>
-          )} */}
+          )}
           </div>
         </div>
         <div className="button-third">{isLoaded && sessionLinks}</div>

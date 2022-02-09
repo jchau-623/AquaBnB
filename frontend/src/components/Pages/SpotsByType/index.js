@@ -23,12 +23,6 @@ const SpotsByType = () => {
         ))}
       </>
     );
-    // } else if (spots.length === 1) {
-    //   pageView = (
-    //     <>
-    //       <SingleSpot spot={spots} />
-    //     </>
-    //   );
   } else {
     pageView = (
       <>
