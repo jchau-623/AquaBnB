@@ -2,10 +2,12 @@ const router = require("express").Router();
 const spotsRouter = require("./spots");
 const sessionRouter = require("./session");
 const usersRouter = require("./users");
+const reviewsRouter = require("./reviews")
 /*--------------------------------------------------------------------*/
 router.use("/session", sessionRouter);
 router.use("/users", usersRouter);
 router.use("/spots", spotsRouter);
+router.use('/reviews', reviewsRouter)
 /*--------------------------------------------------------------------*/
 // TEST ROUTES FOR USER AUTH
 
