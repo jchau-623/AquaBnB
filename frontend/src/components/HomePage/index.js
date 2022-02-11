@@ -1,5 +1,4 @@
 import Home from '../HomeFeed';
-import Footer from '../Footer/index';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import './HomePage.css';
@@ -19,7 +18,6 @@ function Homepage() {
         <div id='main'>
           <Home />
         </div>
-        <Footer />
       </>
     );
   }

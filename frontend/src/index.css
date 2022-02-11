@@ -9,5 +9,5 @@
     position: relative;
     min-height: 100vh;
     padding-bottom: 180px;
-    background-color: lightblue;
+    background:linear-gradient(lightblue, blue)
   }

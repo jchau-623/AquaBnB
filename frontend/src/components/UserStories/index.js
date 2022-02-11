@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { deleteStory } from '../../store/stories';
-import Footer from '../Footer/index';
+// import Footer from '../Footer/index';
 import './UserStories.css';
 
 function UserStories() {
@@ -60,7 +60,7 @@ function UserStories() {
             );
           })}
         </ul>
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   } else {

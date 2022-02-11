@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { deleteStory } from '../../store/stories';
 import Comments from '../Comments';
-import Footer from '../Footer/index';
+// import Footer from '../Footer/index';
 import EditStory from '../UpdateStory';
 import './StoryDetails.css';
 
@@ -28,7 +28,7 @@ function StoryDetail() {
             <h3 className='subtitle'>{story.body}</h3>
           </div>
           <Comments />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </>
     );
@@ -62,7 +62,7 @@ function StoryDetail() {
             <h3 className='subtitle'>{story.body}</h3>
           </div>
           <Comments />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </>
     );
@@ -78,7 +78,7 @@ function StoryDetail() {
             <h3 className='subtitle'>{story.body}</h3>
           </div>
           <Comments />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </>
     );

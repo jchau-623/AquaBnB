@@ -161,7 +161,7 @@ function Comments() {
                           setEditBoxArr(newobj);
                         }}
                       >
-                        Edit
+                        Confirm
                       </button>
                       <button
                         className='clear'

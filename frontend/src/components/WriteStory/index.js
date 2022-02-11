@@ -98,7 +98,7 @@ function WriteStory() {
               Create
             </button>
           </form>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </>
     );

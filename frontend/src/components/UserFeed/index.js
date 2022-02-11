@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../HomeFeed/HomeFeed.css';
-import Footer from '../Footer/index';
+// import Footer from '../Footer/index';
 
 function UserFeed() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -36,7 +36,7 @@ function UserFeed() {
           })}
         </ul>
         <div id="spacer"></div>
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   }
