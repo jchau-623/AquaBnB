@@ -36,7 +36,10 @@ function Navigation({ isLoaded }){
   return (
     <div id="nav-container">
       <div id="home-link-div">
-        <NavLink id="home-link" exact to="/">Home</NavLink>
+        <NavLink id="home-link" exact to="/">
+          {/* <img className='home-link-pic' src="https://t4.ftcdn.net/jpg/03/60/92/43/360_F_360924349_AQNyY0W1WAsCCy4Z70WMn1vvGpGlvTWv.jpg"></img> */}
+          Home</NavLink>
+
       </div>
       <div id="nav-buttons">
         {isLoaded && sessionLinks}
