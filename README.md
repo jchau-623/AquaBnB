@@ -15,5 +15,9 @@
 - Run `npm start` in the "backend" directory.
 - Run `npm start` in the "frontend" directory.
 - If this doesn't automatically open a browser window, navigate to "http://localhost:3000".
+### Database setup:
+- In PostgreSQL, create a user with CREATEDB priviledges.
+- Running your db commands now will create a database, migrate, and then seed all tables.
+### Thank you!
 - This is a work in progress, more updates to come!
 - Have fun and enjoy!
