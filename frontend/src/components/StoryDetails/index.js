@@ -23,7 +23,7 @@ function StoryDetail() {
           <div id='story-details'>
             <h1 className='title'>{story.title}</h1>
             <h3 className='subtitle'>{story.subtitle}</h3>
-            <p className='user-name'>Listing from {story.User.username}</p>
+            <p className='user-name'>Discovered by {story.User.username}</p>
             <img id='sd-img' src={story.imageUrl} alt='Bad Image Link' />
             <h3 className='subtitle'>{story.body}</h3>
           </div>

@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    color:orange;
 }
 
 #comments-form{
@@ -10,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    padding:20px;
 }
 
 .wc-button{
@@ -53,6 +55,7 @@ ul {
     align-content: center;
     margin-bottom: 15px;
     margin-top: 15px;
+    color:orange;
 }
 
 .the-comment-username{
@@ -152,4 +155,10 @@ ul {
     border: 0;
     box-shadow: none;
     cursor: pointer;
+}
+
+.ic-field {
+    font-size: 16px;
+    height:50px;
+
 }

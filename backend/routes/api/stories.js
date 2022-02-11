@@ -8,18 +8,18 @@ const { Story, User } = require('../../db/models');
 const router = express.Router();
 
 const validateStory = [
-  // check('header')
-  //   .exists({ checkFalsy: true })
-  //   .isLength({ min: 1 })
-  //   .withMessage('Title cannot be blank.'),
-  // check('subtitle')
-  //   .exists({ checkFalsy: true })
-  //   .isLength({ min: 1 })
-  //   .withMessage('Description cannot be blank.'),
-  // check('body')
-  //   .exists({ checkFalsy: true })
-  //   .isLength({ min: 1 })
-  //   .withMessage('Body cannot be blank.'),
+  check('title')
+    .exists({ checkFalsy: true })
+    .isLength({ min: 1 })
+    .withMessage('Title cannot be blank.'),
+  check('subtitle')
+    .exists({ checkFalsy: true })
+    .isLength({ min: 1 })
+    .withMessage('Description cannot be blank.'),
+  check('body')
+    .exists({ checkFalsy: true })
+    .isLength({ min: 1 })
+    .withMessage('Body cannot be blank.'),
   check('imageUrl')
     .notEmpty()
     .isURL({ require_protocol: false, require_host: false })
