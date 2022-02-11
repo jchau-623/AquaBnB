@@ -11,15 +11,15 @@ const validateStory = [
   check('title')
     .exists({ checkFalsy: true })
     .isLength({ min: 1 })
-    .withMessage('Title cannot be blank.'),
+    .withMessage('Name cannot be blank.'),
   check('subtitle')
     .exists({ checkFalsy: true })
     .isLength({ min: 1 })
-    .withMessage('Description cannot be blank.'),
+    .withMessage('Heading cannot be blank.'),
   check('body')
     .exists({ checkFalsy: true })
     .isLength({ min: 1 })
-    .withMessage('Body cannot be blank.'),
+    .withMessage('Description cannot be blank.'),
   check('imageUrl')
     .notEmpty()
     .isURL({ require_protocol: false, require_host: false })

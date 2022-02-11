@@ -56,7 +56,7 @@ function WriteStory() {
                 value={title}
                 placeholder='Name'
                 onChange={(e) => setTitle(e.target.value)}
-                required
+                // required
                 autoFocus={true}
               />
             </div>
@@ -68,7 +68,7 @@ function WriteStory() {
                 value={subtitle}
                 placeholder='Heading'
                 onChange={(e) => setSubtitle(e.target.value)}
-                required
+                // required
               />
             </div>
             <div className='ws-form-field'>
@@ -91,7 +91,7 @@ function WriteStory() {
                 value={body}
                 placeholder='Tell us about your spot!'
                 onChange={(e) => setBody(e.target.value)}
-                required
+                // required
               />
             </div>
             <button className='ws-button' type='submit'>

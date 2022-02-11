@@ -149,7 +149,7 @@ function Comments() {
                           cols='60'
                           value={editBody}
                           onChange={(e) => setEditBody(e.target.value)}
-                          required
+                          // required
                         />
                       </label>
                       <button
@@ -201,7 +201,7 @@ function Comments() {
                 value={body}
                 placeholder='How did you enjoy your trip?'
                 onChange={(e) => setBody(e.target.value)}
-                required
+                // required
               />
             </label>
             <button className='wc-button' type='submit'>

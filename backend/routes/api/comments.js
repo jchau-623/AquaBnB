@@ -25,7 +25,7 @@ router.get('/', asyncHandler(async function(req, res) {
 
 
 //inserts a comment into the Comments table
-router.post('/', requireAuth, asyncHandler(async function(req, res) {
+router.post('/', validateComment, requireAuth, asyncHandler(async function(req, res) {
     const newComment = await Comment.create(req.body);
     const comment = await Comment.findByPk(newComment.id, {
       include: [User, Story]
