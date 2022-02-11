@@ -1,0 +1,82 @@
+#story-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+#sd-img {
+  max-width: 700px;
+  transition-duration: 0.4s;
+  margin-top: 10px;
+}
+
+.title,
+.subtitle,
+.user-name {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4d4d4d;
+  margin: 0px;
+  padding-top: 20px;
+}
+
+.user-name {
+  padding-bottom: 20px;
+}
+
+#story-body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.del-btn {
+  margin-top: 10px;
+  background-color: #4d4d4d;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  /* font-weight: bolder; */
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  /* border-radius: 4px; */
+  transition-duration: 0.4s;
+}
+
+.del-btn:hover {
+  background-color: #008080;
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+
+.edit-btn{
+  background-color: #4d4d4d;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  /* font-weight: bolder; */
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  /* border-radius: 4px; */
+  transition-duration: 0.4s;
+  margin-right: 10px;
+}
+
+.edit-btn:hover{
+  background-color: #008080;
+  color: #161618;
+  text-align: center;
+  text-decoration: none;
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  cursor:pointer;
+}

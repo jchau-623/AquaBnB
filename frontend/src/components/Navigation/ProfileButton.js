@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useReducer } from "react";
-import { useDispatch } from "react-redux";
-import { Link, Redirect, useHistory } from "react-router-dom";
-import * as sessionActions from "../../store/session";
-import LoginModal from "../LoginModal";
-import { useModal } from "../../context/Modal";
-import SignupModal from "../SignupModal";
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { NavLink, useHistory } from 'react-router-dom';
+import * as sessionActions from '../../store/session';
+import './ProfileButton.css';
+import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
 
-const ProfileButton = ({ user }) => {
+function ProfileButton() {
+  const sessionUser = useSelector((state) => state.session.user);
+  const history = useHistory();
+
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  const { value, setValue } = useModal();
-  const history = useHistory();
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -18,53 +20,54 @@ const ProfileButton = ({ user }) => {
 
   useEffect(() => {
     if (!showMenu) return;
+
     const closeMenu = () => {
       setShowMenu(false);
     };
-    document.addEventListener("click", closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu, value]);
+    document.addEventListener('click', closeMenu);
+
+    return () => document.removeEventListener('click', closeMenu);
+  }, [showMenu]);
 
   const logout = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     dispatch(sessionActions.logout());
-    // return <Redirect to="/" />;
-    history.push("/");
+    history.push('/');
   };
-  let sessionLinks;
-  if (user) {
-    sessionLinks = (
-      <div>
-        <div className="account-drop-btn" onClick={() => setShowMenu(true)}>
-          <i className="fas fa-bars" />
-          <i className="fas fa-user-circle" />
-        </div>
-        {showMenu && (
-          <div className="drop-menu">
-            {/* <div className="account-link">
-              <Link to={`/users/${user.id}`}>
-                {user.isHost ? "View your spots" : "Become a Host"}
-              </Link>
-            </div> */}
-            <div className="account-link">
-              <Link to={`/users/${user.id}`}>Account</Link>
-            </div>
-            <div className="account-link">
-              <button onClick={logout}>Logout</button>
-            </div>
-          </div>
-        )}
-      </div>
-    )
-  } else {
-    sessionLinks = (
-      <div className="nav-btn">
-        <LoginModal />
-        <SignupModal />
-      </div>
-    )
-  }
-  return sessionLinks
+
+  return (
+    <div id='profile-div'>
+      <button id='profile-button' onClick={openMenu}>
+        {' '}
+        {sessionUser.username}
+      </button>
+      {showMenu && (
+        <ul id='profile-dropdown'>
+          {/* <li className='prof-list-item'>
+            <NavLink className='story-link' to={`/username`}>
+              {sessionUser.username}
+            </NavLink>
+          </li> */}
+          <li className='prof-list-item'>
+            <NavLink className='story-link-nav' to={`/listing/new`}>
+              Create Spot
+            </NavLink>
+          </li>
+          <li className='prof-list-item'>
+            <NavLink className='story-link-nav' to={`/user/listings`}>
+              My Spots
+            </NavLink>
+          </li>
+          <li className='prof-list-item'>
+            <button id='logout-btn' onClick={logout}>
+              Log Out
+            </button>
+          </li>
+        </ul>
+      )}
+    </div>
+  );
 }
-export default ProfileButton
+
+export default ProfileButton;

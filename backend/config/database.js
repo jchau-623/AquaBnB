@@ -1,3 +1,4 @@
+// backend/config/database.js
 const config = require('./index');
 
 const db = config.db;
@@ -13,7 +14,7 @@ module.exports = {
     database,
     host,
     dialect: 'postgres',
-    seederStorage: 'sequelize'
+    seederStorage: 'sequelize',
   },
   production: {
     use_env_variable: 'DATABASE_URL',
@@ -22,8 +23,8 @@ module.exports = {
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false
-      }
-    }
-  }
+        rejectUnauthorized: false,
+      },
+    },
+  },
 };

@@ -1,20 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Route, Switch } from "react-router-dom";
-import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
-import SpotCard from "./components/SpotsCard";
-import Footer from "./components/Footer";
-import Spots from "./components/Pages/Spots";
-import SingleSpot from "./components/Pages/SingleSpot";
-import Landing from "./components/Pages/Landing";
-import Account from "./components/Account";
-import SpotsByType from "./components/Pages/SpotsByType";
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+
+//import components
+// import LoginFormPage from './components/LoginFormPage';
+// import SignupFormPage from './components/SignupFormPage';
+import Navigation from './components/Navigation';
+import Homepage from './components/HomePage';
+import User from './components/User';
+import StoryDetail from './components/StoryDetails';
+import UserStories from './components/UserStories';
+import WriteStory from './components/WriteStory';
+import EditStory from './components/UpdateStory';
+import Footer from './components/Footer';
+import { getStories } from './store/stories';
+import { getComments } from './store/comments';
+
+//import thunk
+import * as sessionActions from './store/session';
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
+    dispatch(getStories());
+    dispatch(getComments());
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
@@ -23,24 +34,26 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/">
-            <Landing />
+          <Route path='/' exact>
+            <Homepage />
           </Route>
-          <Route path="/users/:id">
-            <Account isLoaded={isLoaded} />
+          <Route path='/username'>
+            <User />
           </Route>
-          <Route path="/places/:id">
-            <SingleSpot />
+          <Route path='/user/listings'>
+            <UserStories />
           </Route>
-          <Route path="/places">
-            <Spots isLoaded={isLoaded} />
+          <Route path='/listing/new'>
+            <WriteStory />
           </Route>
-          <Route path="/categories/:type">
-            <SpotsByType />
+          <Route path='/listings/:storyId'>
+            <StoryDetail />
+          </Route>
+          <Route path='/edit/listing/:editStoryId'>
+            <EditStory />
           </Route>
         </Switch>
       )}
-      <Footer />
     </>
   );
 }

@@ -1,26 +1,19 @@
-"use strict";
-const { Validator } = require("sequelize");
-const bcrypt = require("bcryptjs");
-// const phoneValidationRegex = /\d{3}-\d{3}-\d{4}/;
+'use strict';
+const { Validator } = require('sequelize');
+const bcrypt = require('bcryptjs');
+
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define(
-    "User",
+    'User',
     {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [3, 200],
-        },
-      },
       username: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [4, 30],
+          len: [3, 30],
           isNotEmail(value) {
             if (Validator.isEmail(value)) {
-              throw new Error("Cannot be an email.");
+              throw new Error('Cannot be an email.');
             }
           },
         },
@@ -29,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [3, 256],
+          len: [4, 256],
         },
       },
       hashedPassword: {
@@ -39,20 +32,16 @@ module.exports = (sequelize, DataTypes) => {
           len: [60, 60],
         },
       },
-      isHost: {
-        type: DataTypes.BOOLEAN,
-        // defaultValue: false,
-      },
     },
     {
       defaultScope: {
         attributes: {
-          exclude: ["hashedPassword", "email", "createdAt", "updatedAt"],
+          exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
         },
       },
       scopes: {
         currentUser: {
-          attributes: { exclude: ["hashedPassword"] },
+          attributes: { exclude: ['hashedPassword'] },
         },
         loginUser: {
           attributes: {},
@@ -61,25 +50,28 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   User.associate = function (models) {
-    // associations can be defined here
-    User.hasMany(models.Spot, { foreignKey: "hostId" });
-    User.hasMany(models.Review, { foreignKey: "userId" });
-    User.hasMany(models.Reservation, { foreignKey: "userId" });
-    User.hasMany(models.Reservation, { foreignKey: "hostId" });
+    // associations are defined here
+    User.hasMany(models.Story, { foreignKey: 'authorId', onDelete: 'CASCADE', hooks: true  });
+    User.hasMany(models.Comment, { foreignKey: 'userId', onDelete: 'CASCADE', hooks: true  });
   };
+
   User.prototype.toSafeObject = function () {
-    const { id, name, username, email, isHost } = this;
-    return { id, username, email, isHost };
+    // remember, this cannot be an arrow function
+    const { id, username, email } = this; // context will be the User instance
+    return { id, username, email };
   };
+
   User.prototype.validatePassword = function (password) {
     return bcrypt.compareSync(password, this.hashedPassword.toString());
   };
+
   User.getCurrentUserById = async function (id) {
-    return await User.scope("currentUser").findByPk(id);
+    return await User.scope('currentUser').findByPk(id);
   };
+
   User.login = async function ({ credential, password }) {
-    const { Op } = require("sequelize");
-    const user = await User.scope("loginUser").findOne({
+    const { Op } = require('sequelize');
+    const user = await User.scope('loginUser').findOne({
       where: {
         [Op.or]: {
           username: credential,
@@ -88,18 +80,19 @@ module.exports = (sequelize, DataTypes) => {
       },
     });
     if (user && user.validatePassword(password)) {
-      return await User.scope("currentUser").findByPk(user.id);
+      return await User.scope('currentUser').findByPk(user.id);
     }
   };
-  User.signup = async function ({ name, username, email, password }) {
+
+  User.signup = async function ({ username, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
-      name,
       username,
       email,
       hashedPassword,
     });
-    return await User.scope("currentUser").findByPk(user.id);
+    return await User.scope('currentUser').findByPk(user.id);
   };
+
   return User;
 };

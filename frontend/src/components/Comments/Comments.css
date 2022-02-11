@@ -1,0 +1,155 @@
+.comments-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#comments-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wc-button{
+    background-color: #4D4D4D;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    /* font-weight: bolder; */
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    /* border-radius: 4px; */
+    transition-duration: 0.4s;
+}
+
+
+.wc-button:hover{
+    background-color: #008080;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.the-comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.the-comment-username{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+}
+
+
+.commentsDiv{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.edit-button{
+    margin-left: 10px;
+    background-color: #4D4D4D;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    /* font-weight: bolder; */
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    /* border-radius: 4px; */
+    transition-duration: 0.4s;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.edit-button:hover{
+    background-color: #008080;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.delete-button{
+    margin-left: 10px;
+    background-color: #4D4D4D;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    /* font-weight: bolder; */
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    /* border-radius: 4px; */
+    transition-duration: 0.4s;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.delete-button:hover{
+    background-color: #008080;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+
+ul {
+    padding: 0px;
+}
+
+.clear{
+    margin-top: 10px;
+    background-color: #4d4d4d;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    /* font-weight: bolder; */
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    /* border-radius: 4px; */
+    transition-duration: 0.4s;
+    margin-bottom: 15px;
+}
+
+.clear:hover{
+    background-color: #008080;
+    text-align: center;
+    text-decoration: none;
+    font-size: medium;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+}
