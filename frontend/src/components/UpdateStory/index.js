@@ -44,7 +44,7 @@ function EditStory() {
       <>
         <div className='story-form-container'>
           <form className='story-form' onSubmit={handleSubmit}>
-            <h2 className='ws-title'>Edit Listing Details</h2>
+            <h2 className='ws-title'>Edit Spot Details</h2>
             <ul className='ws-errors'>
               {errors.map((error, idx) => (
                 <li key={idx}>{error}</li>

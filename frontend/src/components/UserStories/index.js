@@ -21,7 +21,7 @@ function UserStories() {
 
     return (
       <>
-        <h2 className='rec-title'>My Listings</h2>
+        <h2 className='rec-title'>My Spots</h2>
         <ul className='unorderedList-myupload'>
           {userStories.map((story) => {
             return (
