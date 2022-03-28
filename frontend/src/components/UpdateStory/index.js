@@ -44,7 +44,7 @@ function EditStory() {
       <>
         <div className='story-form-container'>
           <form className='story-form' onSubmit={handleSubmit}>
-            <h2 className='ws-title'>Edit Spot Details</h2>
+            <h2 className='ws-title'>Edit City Details</h2>
             <ul className='ws-errors'>
               {errors.map((error, idx) => (
                 <li key={idx}>{error}</li>
@@ -79,7 +79,7 @@ function EditStory() {
                 id='image'
                 type='text'
                 value={imageUrl}
-                placeholder='Share a picture of your spot!'
+                placeholder='Share a picture of your city'
                 onChange={(e) => setImageUrl(e.target.value)}
                 required
               />
@@ -91,7 +91,7 @@ function EditStory() {
                 rows='5'
                 cols='60'
                 value={body}
-                placeholder='Tell us about your spot!'
+                placeholder='Tell us about the city you discovered'
                 onChange={(e) => setBody(e.target.value)}
                 // required
               />
