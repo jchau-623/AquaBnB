@@ -2,14 +2,19 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Story extends Model {
+  class Spot extends Model {
     static associate(models) {
-      Story.hasMany(models.Comment, { foreignKey: 'storyId', onDelete: 'CASCADE', hooks: true });
-      Story.belongsTo(models.User, { foreignKey: 'authorId' });
+      Spot.hasMany(models.Comment, { foreignKey: 'spotId', onDelete: 'CASCADE', hooks: true });
+      Spot.belongsTo(models.User, { foreignKey: 'userId' });
+      Spot.hasMany(models.Booking, {
+        foreignKey: 'spotId',
+        onDelete: 'CASCADE',
+        hooks: true,
+      });
     }
   }
-  Story.init({
-    authorId: {
+  Spot.init({
+    userId: {
       allowNull: false,
       type: DataTypes.INTEGER,
     },
@@ -29,12 +34,16 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.TEXT,
     },
+    price: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+    },
   }, {
     sequelize,
-    modelName: 'Story',
+    modelName: 'Spot',
   });
-  // Story.associate = function(models) {
+  // Spot.associate = function(models) {
   //   // associations can be defined here
   // };
-  return Story;
+  return Spot;
 };

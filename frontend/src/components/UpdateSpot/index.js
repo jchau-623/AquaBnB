@@ -1,48 +1,50 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createStory } from '../../store/stories';
 import { useHistory } from 'react-router-dom';
-import Footer from '../Footer/index';
-import './WriteStory.css';
+import { useParams } from 'react-router';
+import { updateSpot } from '../../store/spots';
 
-function WriteStory() {
+function EditSpot() {
   const sessionUser = useSelector((state) => state.session.user);
+  const { editSpotId } = useParams();
+  const spot = useSelector((state) => state.spot[editSpotId]);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [title, setTitle] = useState('');
-  const [subtitle, setSubtitle] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState(spot.title);
+  const [subtitle, setSubtitle] = useState(spot.subtitle);
+  const [imageUrl, setImageUrl] = useState(spot.imageUrl);
+  const [body, setBody] = useState(spot.body);
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  if (sessionUser && spot) {
+    const handleSubmit = async (e) => {
+      e.preventDefault();
 
-    const authorId = sessionUser.id;
+      const userId = sessionUser.id;
 
-    const newStory = {
-      authorId,
-      title,
-      subtitle,
-      imageUrl,
-      body,
+      const editedSpot = {
+        id: editSpotId,
+        userId,
+        title,
+        subtitle,
+        imageUrl,
+        body,
+      };
+
+      return dispatch(updateSpot(editedSpot))
+        .then((updatedSpot) => history.push(`/listings/${updatedSpot.id}`))
+        .catch(async (res) => {
+          const data = await res.json();
+          if (data && data.errors) setErrors(data.errors);
+        });
     };
 
-    return dispatch(createStory(newStory))
-      .then((createdStory) => history.push(`/listings/${createdStory.id}`))
-      .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      });
-  };
-
-  if (sessionUser) {
     return (
       <>
         <div className='story-form-container'>
           <form className='story-form' onSubmit={handleSubmit}>
-            <h2 className='ws-title'>Create a Spot</h2>
+            <h2 className='ws-title'>Edit City Details</h2>
             <ul className='ws-errors'>
               {errors.map((error, idx) => (
                 <li key={idx}>{error}</li>
@@ -77,7 +79,7 @@ function WriteStory() {
                 id='image'
                 type='text'
                 value={imageUrl}
-                placeholder='Share a picture of your spot!'
+                placeholder='Share a picture of your city'
                 onChange={(e) => setImageUrl(e.target.value)}
                 required
               />
@@ -89,16 +91,15 @@ function WriteStory() {
                 rows='5'
                 cols='60'
                 value={body}
-                placeholder='Tell us about your spot!'
+                placeholder='Tell us about the city you discovered'
                 onChange={(e) => setBody(e.target.value)}
                 // required
               />
             </div>
             <button className='ws-button' type='submit'>
-              Create
+              Confirm
             </button>
           </form>
-          {/* <Footer /> */}
         </div>
       </>
     );
@@ -107,4 +108,4 @@ function WriteStory() {
   }
 }
 
-export default WriteStory;
+export default EditSpot;

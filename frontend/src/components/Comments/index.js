@@ -9,20 +9,20 @@ import {
 import './Comments.css';
 
 function Comments() {
-  const { storyId } = useParams();
+  const { spotId } = useParams();
   const sessionUser = useSelector((state) => state.session.user);
 
-  const stories = useSelector((state) => state.stories);
-  const storiesArr = Object.values(stories);
-  let story;
+  const spots = useSelector((state) => state.spots);
+  const spotsArr = Object.values(spots);
+  let spot;
   if (sessionUser) {
-    story = storiesArr.filter((story) => story.authorId === sessionUser.id);
+    spot = spotsArr.filter((spot) => spot.userId === sessionUser.id);
   }
 
   const comments = useSelector((state) => state.comments);
   const commentsArr = Object.values(comments);
-  const storyComments = commentsArr.filter(
-    (comment) => comment.storyId === Number(storyId)
+  const spotComments = commentsArr.filter(
+    (comment) => comment.spotId === Number(spotId)
   );
 
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ function Comments() {
     const editedComment = {
       id: showCommentId,
       userId,
-      storyId: Number(storyId),
+      spotId: Number(spotId),
       body: editBody,
     };
 
@@ -75,7 +75,7 @@ function Comments() {
 
     const newComment = {
       userId,
-      storyId: Number(storyId),
+      spotId: Number(spotId),
       body,
     };
 
@@ -94,7 +94,7 @@ function Comments() {
 
       <div id='comments-div'>
         <ul>
-          {storyComments.map((comment) => {
+          {spotComments.map((comment) => {
             return (
               <li key={comment.id} className='comments-list'>
 
@@ -122,7 +122,7 @@ function Comments() {
 
                     {sessionUser &&
                       (sessionUser.id === comment.userId ||
-                        sessionUser.id === story.authorId) && (
+                        sessionUser.id === spot.userId) && (
                         <button
                           className='delete-button'
                           type='submit'
@@ -184,7 +184,7 @@ function Comments() {
         </ul>
       </div>
 
-      {sessionUser && story.authorId !== sessionUser.id && (
+      {sessionUser && spot.userId !== sessionUser.id && (
 
         <div>
           <form id='comments-form' onSubmit={handleSubmit}>

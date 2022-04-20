@@ -3,11 +3,11 @@ const asyncHandler = require('express-async-handler');
 const { requireAuth } = require('../../utils/auth');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-const { Story, User } = require('../../db/models');
+const { Spot, User } = require('../../db/models');
 
 const router = express.Router();
 
-const validateStory = [
+const validateSpot = [
   check('title')
     .exists({ checkFalsy: true })
     .isLength({ min: 1 })
@@ -27,49 +27,49 @@ const validateStory = [
   handleValidationErrors,
 ];
 
-//gets all stories from the Stories table
+//gets all spots from the Spots table
 router.get('/', asyncHandler(async function(req, res) {
-    const stories = await Story.findAll({
+    const spots = await Spot.findAll({
         include: User
     });
-    return res.json(stories);
+    return res.json(spots);
 }));
 
 
-//inserts a story into the Stories table
-// router.post('/', requireAuth, validateStory, asyncHandler(async function(req, res) {
-router.post('/', requireAuth, validateStory, asyncHandler(async function(req, res) {
-      const newStory = await Story.create(req.body);
-      const story = await Story.findByPk(newStory.id, {
+//inserts a spot into the spots table
+// router.post('/', requireAuth, validateSpot, asyncHandler(async function(req, res) {
+router.post('/', requireAuth, validateSpot, asyncHandler(async function(req, res) {
+      const newSpot = await Spot.create(req.body);
+      const spot = await Spot.findByPk(newSpot.id, {
         include: User
     });
-      if(story) {
-        return res.json(story);
+      if(spot) {
+        return res.json(spot);
       }
     })
   );
 
 
-//edits a story
-// router.put('/:id', requireAuth, validateStory, asyncHandler(async function(req, res) {
-router.put('/:id', requireAuth, validateStory, asyncHandler(async function(req, res) {
-  await Story.update(req.body, { where: { id: req.body.id } });
-  const updatedStory = await Story.findByPk(req.body.id, {
+//edits a spot
+// router.put('/:id', requireAuth, validateSpot, asyncHandler(async function(req, res) {
+router.put('/:id', requireAuth, validateSpot, asyncHandler(async function(req, res) {
+  await Spot.update(req.body, { where: { id: req.body.id } });
+  const updatedSpot = await Spot.findByPk(req.body.id, {
     include: User
   });
 
-  if(updatedStory) {
-    return res.json(updatedStory);
+  if(updatedSpot) {
+    return res.json(updatedSpot);
   }
 })
 );
 
-//deletes a story
+//deletes a spot
 router.delete('/delete/:id', requireAuth, asyncHandler(async function(req, res) {
-  const storyId = req.params.id;
-  const deletedStory = await Story.destroy({ where: { id: storyId } })
-  if(deletedStory) {
-    return res.json(storyId);
+  const spotId = req.params.id;
+  const deletedSpot = await Spot.destroy({ where: { id: spotId } })
+  if(deletedSpot) {
+    return res.json(spotId);
   }
 })
 );

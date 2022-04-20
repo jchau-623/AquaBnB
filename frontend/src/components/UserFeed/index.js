@@ -6,28 +6,28 @@ import '../HomeFeed/HomeFeed.css';
 
 function UserFeed() {
   const sessionUser = useSelector((state) => state.session.user);
-  const allStories = useSelector((state) => state.stories);
-  const storiesArr = Object.values(allStories);
-  const recStories = storiesArr.filter(
-    (story) => story.authorId !== sessionUser.id
+  const allSpots = useSelector((state) => state.spots);
+  const spotsArr = Object.values(allSpots);
+  const recSpots = spotsArr.filter(
+    (spot) => spot.userId !== sessionUser.id
   );
 
-  if (recStories.length) {
+  if (recSpots.length) {
     return (
       <>
         <h2 id='recommended'>Recommended Cities for you!</h2>
         <ul className='unorderedList'>
-          {recStories.map((story) => {
+          {recSpots.map((spot) => {
             return (
-              <li key={story.id} className='allStories'>
+              <li key={spot.id} className='allStories'>
                 <div className='story-container'>
                   <div className='imgDiv'>
                     <NavLink
                       className='story-link'
-                      to={`/listings/${story.id}`}
+                      to={`/listings/${spot.id}`}
                     >
-                                                                <h2 className='myuploadStoryTitle'>{story.title}</h2>
-                      <img id='imgThumbnail' src={story.imageUrl} />
+                                                                <h2 className='myuploadStoryTitle'>{spot.title}</h2>
+                      <img id='imgThumbnail' src={spot.imageUrl} />
                     </NavLink>
                   </div>
                 </div>

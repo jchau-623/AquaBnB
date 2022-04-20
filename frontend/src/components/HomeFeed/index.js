@@ -2,27 +2,27 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 // import './HomeFeed.css';
-import '../UserStories/UserStories.css';
+import '../UserSpots/UserSpots.css';
 
 function Home() {
-  const allStories = useSelector((state) => state.stories);
-  const storiesArr = Object.values(allStories);
+  const allSpots = useSelector((state) => state.spots);
+  const spotsArr = Object.values(allSpots);
 
-  if (storiesArr.length) {
+  if (spotsArr.length) {
     return (
       <>
         <ul className='unorderedList'>
-          {storiesArr.map((story) => {
+          {spotsArr.map((spot) => {
             return (
-              <li key={story.id} className='allStories'>
+              <li key={spot.id} className='allStories'>
                 <div className='story-container'>
                   <div className='imgDiv'>
                     <NavLink
                       className='story-link'
-                      to={`/listings/${story.id}`}
+                      to={`/listings/${spot.id}`}
                     >
-                                                                <h2 className='myuploadStoryTitle'>{story.title}</h2>
-                      <img id='imgThumbnail' src={story.imageUrl} />
+                                                                <h2 className='myuploadStoryTitle'>{spot.title}</h2>
+                      <img id='imgThumbnail' src={spot.imageUrl} />
                     </NavLink>
                   </div>
                 </div>

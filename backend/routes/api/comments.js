@@ -3,7 +3,7 @@ const asyncHandler = require('express-async-handler');
 const { requireAuth } = require('../../utils/auth');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
-const { Story, User, Comment } = require('../../db/models');
+const { Spot, User, Comment } = require('../../db/models');
 
 const router = express.Router();
 
@@ -18,7 +18,7 @@ const validateComment = [
 //gets all comments from the Comments table
 router.get('/', asyncHandler(async function(req, res) {
     const comments = await Comment.findAll({
-        include: [User, Story]
+        include: [User, Spot]
     });
     return res.json(comments);
 }));
@@ -28,7 +28,7 @@ router.get('/', asyncHandler(async function(req, res) {
 router.post('/', validateComment, requireAuth, asyncHandler(async function(req, res) {
     const newComment = await Comment.create(req.body);
     const comment = await Comment.findByPk(newComment.id, {
-      include: [User, Story]
+      include: [User, Spot]
   });
     if(comment) {
       return res.json(comment);
@@ -40,7 +40,7 @@ router.post('/', validateComment, requireAuth, asyncHandler(async function(req, 
 router.put('/:id', requireAuth, validateComment, asyncHandler(async function(req, res) {
     await Comment.update(req.body, { where: { id: req.body.id } });
     const updatedComment = await Comment.findByPk(req.body.id, {
-      include: [User, Story]
+      include: [User, Spot]
     });
 
     if(updatedComment) {

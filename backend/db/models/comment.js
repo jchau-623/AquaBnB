@@ -4,12 +4,13 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {
     static associate(models) {
-      Comment.belongsTo(models.Story, { foreignKey: 'storyId' });
+      Comment.belongsTo(models.Spot, { foreignKey: 'spotId' });
       Comment.belongsTo(models.User, { foreignKey: 'userId' });
     }
   }
-  Comment.init({
-    storyId: {
+  Comment.init(
+    {
+    spotId: {
       allowNull: false,
       type: DataTypes.INTEGER,
     },

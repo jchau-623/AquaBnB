@@ -1,44 +1,44 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
-import { deleteStory } from '../../store/stories';
+import { deleteSpot } from '../../store/spots';
 // import Footer from '../Footer/index';
-import './UserStories.css';
+import './UserSpots.css';
 
-function UserStories() {
+function UserSpots() {
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
-  const allStories = useSelector((state) => state.stories);
-  const storiesArr = Object.values(allStories);
+  const allSpots = useSelector((state) => state.spots);
+  const spotsArr = Object.values(allSpots);
 
-  let userStories;
+  let userSpots;
 
   if (sessionUser) {
-    userStories = storiesArr.filter(
-      (story) => story.authorId === sessionUser.id
+    userSpots = spotsArr.filter(
+      (spot) => spot.userId === sessionUser.id
     );
 
     return (
       <>
         <h2 className='rec-title'>My Spots</h2>
         <ul className='unorderedList-myupload'>
-          {userStories.map((story) => {
+          {userSpots.map((spot) => {
             return (
-              <li key={story.id} className='allStories-myupload'>
+              <li key={spot.id} className='allStories-myupload'>
                 <div className='story-container-myupload'>
-                  <NavLink className='header' to={`/listings/${story.id}`}>
+                  <NavLink className='header' to={`/listings/${spot.id}`}>
                   </NavLink>
                   <div className='imgDiv'>
                     <NavLink
                       className='story-link'
-                      to={`/listings/${story.id}`}
+                      to={`/listings/${spot.id}`}
                     >
-                                          <h2 className='myuploadStoryTitle'>{story.title}</h2>
-                      <img id='imgThumbnail' src={story.imageUrl} />
+                                          <h2 className='myuploadStoryTitle'>{spot.title}</h2>
+                      <img id='imgThumbnail' src={spot.imageUrl} />
                       <div className='story-details'>
                     <div id='e-d-btn-ctn'>
-                      <NavLink to={`/edit/listing/${story.id}`}>
+                      <NavLink to={`/edit/listing/${spot.id}`}>
                         <button className='edit-btn-myupload' type='submit'>
                           Edit
                         </button>
@@ -46,7 +46,7 @@ function UserStories() {
                       <button
                         className='del-btn'
                         type='submit'
-                        onClick={() => dispatch(deleteStory(story.id))}
+                        onClick={() => dispatch(deleteSpot(spot.id))}
                       >
                         Delete
                       </button>
@@ -68,4 +68,4 @@ function UserStories() {
   }
 }
 
-export default UserStories;
+export default UserSpots;

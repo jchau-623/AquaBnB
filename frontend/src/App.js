@@ -8,12 +8,12 @@ import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Homepage from './components/HomePage';
 import User from './components/User';
-import StoryDetail from './components/StoryDetails';
-import UserStories from './components/UserStories';
-import WriteStory from './components/WriteStory';
-import EditStory from './components/UpdateStory';
+import SpotDetail from './components/SpotDetails';
+import UserSpots from './components/UserSpots';
+import WriteSpot from './components/WriteSpot';
+import EditSpot from './components/UpdateSpot';
 import Footer from './components/Footer';
-import { getStories } from './store/stories';
+import { getSpots } from './store/spots';
 import { getComments } from './store/comments';
 
 //import thunk
@@ -24,7 +24,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    dispatch(getStories());
+    dispatch(getSpots());
     dispatch(getComments());
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
@@ -41,16 +41,16 @@ function App() {
             <User />
           </Route>
           <Route path='/user/listings'>
-            <UserStories />
+            <UserSpots />
           </Route>
           <Route path='/listing/new'>
-            <WriteStory />
+            <WriteSpot />
           </Route>
-          <Route path='/listings/:storyId'>
-            <StoryDetail />
+          <Route path='/listings/:spotId'>
+            <SpotDetail />
           </Route>
-          <Route path='/edit/listing/:editStoryId'>
-            <EditStory />
+          <Route path='/edit/listing/:editSpotId'>
+            <EditSpot />
           </Route>
         </Switch>
       )}

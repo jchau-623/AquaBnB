@@ -3,12 +3,12 @@ import thunk from 'redux-thunk';
 
 //importing reducers
 import sessionReducer from './session';
-import storiesReducer from "./stories";
+import spotsReducer from "./spots";
 import commentsReducer from "./comments";
 
 //reducer combiner
 const rootReducer = combineReducers({
-  stories: storiesReducer,
+  spots: spotsReducer,
   session: sessionReducer,
   comments: commentsReducer,
 });
