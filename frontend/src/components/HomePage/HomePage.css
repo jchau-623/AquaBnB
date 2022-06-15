@@ -6,7 +6,7 @@
     margin: 0;
     /* margin-left: 150px;
     margin-right: 150px; */
-    background: linear-gradient(lightblue, lightblue, blue);
+    background: linear-gradient(lightblue,rgb(0, 0, 214));
     padding-bottom: 50px;
 }
 
@@ -76,7 +76,7 @@
 
 .main-image-container {
     width: 100%;
-    background: linear-gradient(blue, lightblue, lightblue);
+    background: linear-gradient(rgb(0, 0, 214), lightblue, lightblue);
     height: 1000px;
     padding-top: 10px;
     display: flex;

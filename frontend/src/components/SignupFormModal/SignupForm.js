@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
+import "./SignUpForm.css"
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function SignupForm() {
           if (data && data.errors) setErrors(data.errors);
         });
     }
-    return setErrors(['Confirm Password field must match Password field']);
+    return setErrors(['Passwords must match']);
   };
 
   return (
@@ -36,7 +37,6 @@ function SignupForm() {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
       </label>
       <label className="cred-form-field">
@@ -46,7 +46,6 @@ function SignupForm() {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required
         />
       </label>
       <label className="cred-form-field">
@@ -56,7 +55,6 @@ function SignupForm() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
         />
       </label>
       <label className="cred-form-field">
@@ -66,7 +64,6 @@ function SignupForm() {
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          required
         />
       </label>
       <button className="cred-button" type="submit">Sign Up</button>

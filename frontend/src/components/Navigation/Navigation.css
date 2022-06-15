@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: blue;
+    background-color: rgb(0, 0, 214);
     height: 100px;
     width: 100%;
 
@@ -22,29 +22,22 @@
 }
 
 #demo-btn{
-    background-color: #4d4d4d;
-    color: white;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    text-decoration: none;
-    /* font-weight: bolder; */
-    font-weight: medium;
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    /* border-radius: 4px; */
-    margin-right: 30px;
-    transition-duration: 0.4s;
+    background-color: rgb(0, 0, 214);
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 7px;
+    border: none;
+    color:white;
 }
 
 #demo-btn:hover{
-    background-color: rgb(255, 255, 255);
-    background-color: #008080;
     text-align: center;
     text-decoration: none;
+    color: #008080;
     font-weight: medium;
-    border: 0;
-    box-shadow: none;
-    margin-right: 30px;
     cursor: pointer;
 }
 
@@ -54,7 +47,12 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     padding-left: 50px;
-    font-size: medium;
+    font-size: 20px;
+}
+
+.fa-airbnb {
+    padding-right: 5px;
+    font-size: 35px;
 }
 
 #home-link:hover {
@@ -64,7 +62,6 @@
     /* font-weight: bolder; */
     padding-left: 50px;
     font-weight: bolder;
-    font-size: medium;
     transition-duration: 0.4s;
 }
 
