@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../HomeFeed/HomeFeed.css';
-// import Footer from '../Footer/index';
 
 function UserFeed() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -26,8 +25,8 @@ function UserFeed() {
                       className='story-link'
                       to={`/listings/${story.id}`}
                     >
-                                                                <h2 className='myuploadStoryTitle'>{story.title}</h2>
-                      <img id='imgThumbnail' src={story.imageUrl} alt=''/>
+                      <h2 className='myuploadStoryTitle'>{story.title}</h2>
+                      <img id='imgThumbnail' src={story.imageUrl} alt='' />
                     </NavLink>
                   </div>
                 </div>
@@ -35,8 +34,6 @@ function UserFeed() {
             );
           })}
         </ul>
-        <div id="spacer"></div>
-        {/* <Footer /> */}
       </>
     );
   }

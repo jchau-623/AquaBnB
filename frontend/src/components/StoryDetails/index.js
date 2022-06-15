@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { deleteStory } from '../../store/stories';
 import Comments from '../Comments';
-// import Footer from '../Footer/index';
-import EditStory from '../UpdateStory';
 import './StoryDetails.css';
 
 function StoryDetail() {
@@ -13,6 +11,7 @@ function StoryDetail() {
   const { storyId } = useParams();
   const sessionUser = useSelector((state) => state.session.user);
   const story = useSelector((state) => state.stories[storyId]);
+  // eslint-disable-next-line
   const [showComments, setShowComments] = useState(false);
   const deletingStory = () => dispatch(deleteStory(story.id));
 
@@ -24,7 +23,7 @@ function StoryDetail() {
             <h1 className='title'>{story.title}</h1>
             <h3 className='subtitle'>{story.subtitle}</h3>
             <p className='user-name'>Discovered by {story.User.username}</p>
-            <img id='sd-img' src={story.imageUrl} alt='Bad Image Link' />
+            <img id='sd-img' src={story.imageUrl} alt='' />
             <h3 className='subtitle'>{story.body}</h3>
           </div>
           <Comments />
@@ -58,7 +57,7 @@ function StoryDetail() {
                 Delete
               </button>
             </div>
-            <img id='sd-img' src={story.imageUrl} alt='Bad Image Link' />
+            <img id='sd-img' src={story.imageUrl} alt='' />
             <h3 className='subtitle'>{story.body}</h3>
           </div>
           <Comments />
@@ -74,7 +73,7 @@ function StoryDetail() {
             <h1 className='title'>{story.title}</h1>
             <h3 className='subtitle'>{story.subtitle}</h3>
             <p className='user-name'>Listing from {story.User.username}</p>
-            <img id='sd-img' src={story.imageUrl} alt='Bad Image Link' />
+            <img id='sd-img' src={story.imageUrl} alt='' />
             <h3 className='subtitle'>{story.body}</h3>
           </div>
           <Comments />

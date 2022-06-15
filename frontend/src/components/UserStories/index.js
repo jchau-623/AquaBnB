@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { deleteStory } from '../../store/stories';
-// import Footer from '../Footer/index';
 import './UserStories.css';
 
 function UserStories() {
@@ -35,7 +34,7 @@ function UserStories() {
                       to={`/listings/${story.id}`}
                     >
                                           <h2 className='myuploadStoryTitle'>{story.title}</h2>
-                      <img id='imgThumbnail' src={story.imageUrl} />
+                      <img id='imgThumbnail' src={story.imageUrl} alt=''/>
                       <div className='story-details'>
                     <div id='e-d-btn-ctn'>
                       <NavLink to={`/edit/listing/${story.id}`}>
@@ -60,7 +59,6 @@ function UserStories() {
             );
           })}
         </ul>
-        {/* <Footer /> */}
       </>
     );
   } else {

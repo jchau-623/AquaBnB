@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createStory } from '../../store/stories';
 import { useHistory } from 'react-router-dom';
-import Footer from '../Footer/index';
 import './WriteStory.css';
 
 function WriteStory() {
@@ -56,7 +55,6 @@ function WriteStory() {
                 value={title}
                 placeholder='Name'
                 onChange={(e) => setTitle(e.target.value)}
-                // required
                 autoFocus={true}
               />
             </div>
@@ -68,7 +66,6 @@ function WriteStory() {
                 value={subtitle}
                 placeholder='Heading'
                 onChange={(e) => setSubtitle(e.target.value)}
-                // required
               />
             </div>
             <div className='ws-form-field'>
@@ -77,9 +74,9 @@ function WriteStory() {
                 id='image'
                 type='text'
                 value={imageUrl}
-                placeholder='Share a picture of your spot!'
+                placeholder='Share a picture!'
                 onChange={(e) => setImageUrl(e.target.value)}
-                required
+
               />
             </div>
             <div className='ws-form-field'>
@@ -91,14 +88,12 @@ function WriteStory() {
                 value={body}
                 placeholder='Tell us about your spot!'
                 onChange={(e) => setBody(e.target.value)}
-                // required
               />
             </div>
             <button className='ws-button' type='submit'>
               Create
             </button>
           </form>
-          {/* <Footer /> */}
         </div>
       </>
     );

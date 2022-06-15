@@ -1,50 +1,39 @@
-
-
 #nav-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
     background-color: rgb(0, 0, 214);
     height: 100px;
     width: 100%;
-
-}
-
-#inBetween{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 #nav-buttons{
-    padding-right: 50px;
-}
-
-#demo-btn{
+    margin:50px;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+#demo-btn{
     background-color: rgb(0, 0, 214);
     font-size: 16px;
-    margin-top: 10px;
-    border-radius: 7px;
     border: none;
     color:white;
 }
 
 #demo-btn:hover{
-    text-align: center;
-    text-decoration: none;
     color: #008080;
-    font-weight: medium;
     cursor: pointer;
 }
 
 #home-link {
     text-decoration: none;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     padding-left: 50px;
     font-size: 20px;
@@ -58,8 +47,6 @@
 #home-link:hover {
     text-decoration: none;
     color: #008080;
-    font-family: Arial, Helvetica, sans-serif;
-    /* font-weight: bolder; */
     padding-left: 50px;
     font-weight: bolder;
     transition-duration: 0.4s;

@@ -10,7 +10,7 @@ const router = express.Router();
 const validateComment = [
   check('body')
     .exists({ checkFalsy: true })
-    .isLength({ min: 1 })
+    // .isLength({ min: 1 })
     .withMessage('Comment cannot be empty.'),
   handleValidationErrors,
 ];

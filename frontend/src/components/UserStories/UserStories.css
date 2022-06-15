@@ -1,210 +1,202 @@
 #imgThumbnail {
-    border-radius: 8px;
-    border-radius: 18px;
-    /* border: 1px solid #4d4d4d; */
-    padding: 5px;
-    width: 600px;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
+  border-radius: 8px;
+  border-radius: 18px;
+  /* border: 1px solid #4d4d4d; */
+  padding: 5px;
+  width: 600px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
 }
 
-.imgDiv{
-    display: flex;
-    flex-direction: row;
-    /* justify-content: space-evenly; */
-    margin: 0;
-    padding: 0;
-    align-content: center;
-    margin-left: 27px;
+.imgDiv {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  margin: 0;
+  padding: 0;
+  align-content: center;
+  margin-left: 27px;
 }
 
-.story-details{
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    font-size: 15px;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 10px;
+.story-details {
+  text-decoration: none;
+  font-size: 15px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 10px;
 }
 
 ul {
-    list-style-type: none;
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
+  list-style-type: none;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
-.unorderedList{
-    padding: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
-    /* margin-bottom: 30px; */
-    list-style-type: none;
-    display: flex;
-    align-items: flex-start;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+.unorderedList {
+  padding: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* margin-bottom: 30px; */
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .ud-feed-container {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: -moz-fit-content;
-    height: fit-content;
-    margin: 0;
-    margin-left: 150px;
-    margin-right: 150px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
-.allStories{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: fit-content;
-    margin-bottom: 60px;
+.allStories {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: fit-content;
+  margin-bottom: 60px;
 }
 
-.rec-title{
-    margin-top: 4%;
-    margin-bottom: 3%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color:white;
+.rec-title {
+  margin-top: 4%;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
 }
 
-.edit-btn{
-    background-color: #4d4d4d;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    /* font-weight: bolder; */
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    /* border-radius: 4px; */
-    transition-duration: 0.4s;
-    margin-right: 10px;
-  }
+.edit-btn {
+  background-color: #4d4d4d;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  /* font-weight: bolder; */
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  /* border-radius: 4px; */
+  transition-duration: 0.4s;
+  margin-right: 10px;
+}
 
-  .edit-btn:hover{
-    background-color: rgb(255, 255, 255);
-    color: #161618;
-    text-align: center;
-    text-decoration: none;
-    /* font-weight: bolder; */
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    /* border-radius: 4px; */
-  }
-
-
-  .del-btn {
-    margin-top: 10px;
-    background-color: rgb(172, 6, 6);
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-decoration: none;
-    /* font-weight: bolder; */
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    /* border-radius: 4px; */
-    transition-duration: 0.4s;
-  }
-
-  .del-btn:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(172, 6, 6);
-    text-align: center;
-    text-decoration: none;
-    /* font-weight: bolder; */
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    /* border-radius: 4px; */
-  }
-
-
-  .header {
-      color: white;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      font-family: Arial, Helvetica, sans-serif;
-  }
-
-
-  .unorderedList-myupload{
-    padding: 0px;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    /* margin-left: 600px; */
+.edit-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: #161618;
+  text-align: center;
+  text-decoration: none;
+  /* font-weight: bolder; */
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  /* border-radius: 4px; */
 }
 
 
-.allStories-myupload{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: fit-content;
-    margin-bottom: 13px;
-    margin-left: 12px;
-    margin-right:12px;
-    padding-bottom: 10px;
-    /* background-color: rgba(77, 77, 77, 0.5); */
+.del-btn {
+  margin-top: 10px;
+  background-color: rgb(172, 6, 6);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  /* font-weight: bolder; */
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  /* border-radius: 4px; */
+  transition-duration: 0.4s;
 }
 
-.myuploadStoryTitle{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: white;
-    text-decoration: none;
+.del-btn:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(172, 6, 6);
+  text-align: center;
+  text-decoration: none;
+  /* font-weight: bolder; */
+  font-size: medium;
+  border: 0;
+  box-shadow: none;
+  /* border-radius: 4px; */
+}
+
+
+.header {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.unorderedList-myupload {
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  /* margin-left: 600px; */
+}
+
+
+.allStories-myupload {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: fit-content;
+  margin-bottom: 13px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 10px;
+  /* background-color: rgba(77, 77, 77, 0.5); */
+}
+
+.myuploadStoryTitle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
 }
 
 a:link {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 
 
-.edit-btn-myupload{
-    background-color: #4d4d4d;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    /* font-weight: bolder; */
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    /* border-radius: 4px; */
-    transition-duration: 0.4s;
-    margin-right: 10px;
-  }
+.edit-btn-myupload {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(0, 0, 214);
+  font-size: 16px;
+  border-radius: 7px;
+  border: none;
+  margin: 10px;
+  color: white;
+}
 
 
-  .edit-btn-myupload:hover{
-    background-color: #008080;
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    font-size: medium;
-    border: 0;
-    box-shadow: none;
-    cursor: pointer;
-  }
+.edit-btn-myupload:hover {
+  color: #008080;
+  text-align: center;
+  text-decoration: none;
+  font-size: medium;
+  cursor: pointer;
+}

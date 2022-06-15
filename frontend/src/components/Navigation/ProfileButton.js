@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './ProfileButton.css';
-// import LoginFormModal from '../LoginFormModal';
-// import SignupFormModal from '../SignupFormModal';
 
 function ProfileButton() {
+      // eslint-disable-next-line
   const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
 
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
+      // eslint-disable-next-line
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -38,17 +38,11 @@ function ProfileButton() {
 
   return (
     <div id='profile-div'>
-      <button id='profile-button' onClick={openMenu}>
-        {' '}
+      {/* <button id='profile-button' onClick={openMenu}>
         {sessionUser.username}
       </button>
-      {showMenu && (
-        <ul id='profile-dropdown'>
-          {/* <li className='prof-list-item'>
-            <NavLink className='story-link' to={`/username`}>
-              {sessionUser.username}
-            </NavLink>
-          </li> */}
+      {showMenu && ( */}
+        <ul className='profile-dropdown'>
           <li className='prof-list-item'>
             <NavLink className='story-link-nav' to={`/listing/new`}>
               Create Spot
@@ -65,7 +59,7 @@ function ProfileButton() {
             </button>
           </li>
         </ul>
-      )}
+      {/* )} */}
     </div>
   );
 }

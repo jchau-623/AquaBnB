@@ -10,18 +10,14 @@ const router = express.Router();
 const validateStory = [
   check('title')
     .exists({ checkFalsy: true })
-    .isLength({ min: 1 })
     .withMessage('Name cannot be blank.'),
   check('subtitle')
     .exists({ checkFalsy: true })
-    .isLength({ min: 1 })
     .withMessage('Heading cannot be blank.'),
   check('body')
     .exists({ checkFalsy: true })
-    .isLength({ min: 1 })
     .withMessage('Description cannot be blank.'),
   check('imageUrl')
-    .notEmpty()
     .isURL({ require_protocol: false, require_host: false })
     .withMessage('Needs a valid image URL.'),
   handleValidationErrors,

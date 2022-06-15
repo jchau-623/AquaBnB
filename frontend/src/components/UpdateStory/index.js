@@ -79,7 +79,7 @@ function EditStory() {
                 id='image'
                 type='text'
                 value={imageUrl}
-                placeholder='Share a picture of your spot!'
+                placeholder='Share a picture!'
                 onChange={(e) => setImageUrl(e.target.value)}
                 required
               />
