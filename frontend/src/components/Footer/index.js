@@ -14,7 +14,7 @@ function Footer() {
                 <span>JavaScript</span>
             </div>
             <div className="my-details">
-                <div>AquaBnb by Justin Chau</div>
+                <div>© 2022 AquaBnb by Justin Chau</div>
                 <a
                     href="https://github.com/jchau-623"
                     target="_blank"
