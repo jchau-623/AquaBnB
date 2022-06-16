@@ -184,7 +184,7 @@ a:link {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgb(0, 0, 214);
+  background-color: rgb(0, 135, 214);
   font-size: 16px;
   border-radius: 7px;
   border: none;
@@ -195,6 +195,7 @@ a:link {
 
 .edit-btn-myupload:hover {
   color: #008080;
+  background-color: rgb(0, 135, 214);
   text-align: center;
   text-decoration: none;
   font-size: medium;

@@ -46,7 +46,7 @@ function StoryDetail() {
                 </button>
               </NavLink>
               <button
-                className='del-btn'
+                className='del-btn-2'
                 type='submit'
                 // onClick={() => dispatch(deleteStory(story.id))}
                 onClick={() => {

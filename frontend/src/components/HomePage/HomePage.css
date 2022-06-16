@@ -4,10 +4,7 @@
     justify-content: space-evenly;
     height: fit-content;
     margin: 0;
-    /* margin-left: 150px;
-    margin-right: 150px; */
     background: linear-gradient(lightblue,rgb(0, 0, 214));
-    padding-bottom: 50px;
 }
 
 #aboutDiv{
@@ -73,7 +70,7 @@
 .main-image-container {
     width: 100%;
     background: linear-gradient(rgb(0, 0, 214), lightblue, lightblue);
-    height: 1000px;
+    height: 700px;
     padding-top: 10px;
     display: flex;
     justify-content: center;
@@ -83,7 +80,7 @@
     background-repeat: no-repeat;
     max-width: 2000px;
     min-width: 90%;
-    height: 950px;
+    height: 700px;
     background-size: cover;
     background-position: center;
     border-radius: 18px;

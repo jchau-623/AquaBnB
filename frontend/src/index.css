@@ -8,8 +8,10 @@
   #root {
     position: relative;
     min-height: 100vh;
-    padding-bottom: 180px;
-    background-color: rgb(0, 0, 214);
+    padding-bottom: 120px;
+    /* background-color: rgb(0, 0, 214); */
+    /* background:linear-gradient(rgb(0, 0, 214), lightblue); */
+    background:linear-gradient(lightblue, rgb(0, 0, 214));
   }
 
   .buttons {
