@@ -5,30 +5,17 @@ import * as sessionActions from '../../store/session';
 import './ProfileButton.css';
 
 function ProfileButton() {
-      // eslint-disable-next-line
+  // eslint-disable-next-line
   const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
+  const [showDropdown, setShowDropdown] = useState(false)
 
   const dispatch = useDispatch();
-  const [showMenu, setShowMenu] = useState(false);
 
-      // eslint-disable-next-line
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
+  const handleClick = (e) => {
+    setShowDropdown(!showDropdown);
+    // this toggles it true/false. you only set it to true, which is why it never becomes false again
   };
-
-  useEffect(() => {
-    if (!showMenu) return;
-
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
-
-    document.addEventListener('click', closeMenu);
-
-    return () => document.removeEventListener('click', closeMenu);
-  }, [showMenu]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -38,10 +25,13 @@ function ProfileButton() {
 
   return (
     <div id='profile-div'>
-      {/* <button id='profile-button' onClick={openMenu}>
-        {sessionUser.username}
-      </button>
-      {showMenu && ( */}
+      <div className='hamburger-icon'>
+      <i className="fa-solid fa-bars"
+        onClick={handleClick}></i>
+        <i className="fa-solid fa-user"
+        onClick={handleClick}></i>
+        </div>
+      {showDropdown &&
         <ul className='profile-dropdown'>
           <li className='prof-list-item'>
             <NavLink className='story-link-nav' to={`/listing/new`}>
@@ -59,7 +49,7 @@ function ProfileButton() {
             </button>
           </li>
         </ul>
-      {/* )} */}
+      }
     </div>
   );
 }
