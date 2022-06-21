@@ -115,11 +115,11 @@ ul {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(0, 0, 214);
+    background-color:transparent;
     font-size: 16px;
     border-radius: 7px;
     border: none;
-    color:white
+    color:white;
 }
 
 .clear:hover{
