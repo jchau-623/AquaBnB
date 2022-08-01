@@ -13,6 +13,7 @@ function ProfileButton() {
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
+    e.preventDefault()
     setShowDropdown(!showDropdown);
     // this toggles it true/false. you only set it to true, which is why it never becomes false again
   };
